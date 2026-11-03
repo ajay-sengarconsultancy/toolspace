@@ -1,0 +1,147 @@
+.tracker {
+  position: relative;
+  padding: 17px;
+  border: 1px solid rgb(23 23 19 / 12%);
+  background: rgb(255 254 250 / 60%);
+}
+
+.trackerHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.trackerHeading h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.trackerHeading p {
+  margin: 0;
+  color: #777267;
+  font-size: 9px;
+}
+
+.trackerHeading strong {
+  color: var(--color-forest);
+  font-weight: 600;
+}
+
+.track {
+  position: absolute;
+  top: 60px;
+  right: calc(10% + 5px);
+  left: calc(10% + 5px);
+  height: 1px;
+  background: rgb(23 23 19 / 15%);
+}
+
+.trackFill {
+  display: block;
+  width: var(--tracker-progress);
+  height: 100%;
+  background: var(--color-forest);
+}
+
+.steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #898478;
+  font-size: 8px;
+  text-align: center;
+}
+
+.stepDot {
+  display: grid;
+  width: 11px;
+  height: 11px;
+  place-items: center;
+  border: 1px solid #aaa59a;
+  border-radius: 50%;
+  background: var(--color-paper);
+  color: #fffefa;
+  font-size: 7px;
+}
+
+.complete .stepDot {
+  border-color: var(--color-forest);
+  background: var(--color-forest);
+}
+
+.current {
+  color: var(--color-forest);
+  font-weight: 650;
+}
+
+.current .stepDot {
+  border-color: var(--color-forest);
+  background: #fffefa;
+  box-shadow: 0 0 0 3px rgb(31 81 50 / 14%);
+}
+
+.stepName {
+  max-width: 75px;
+  line-height: 1.35;
+}
+
+@media (max-width: 600px) {
+  .trackerHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 18px;
+  }
+
+  .track {
+    top: 67px;
+    bottom: 21px;
+    left: 22px;
+    width: 1px;
+    height: auto;
+  }
+
+  .trackFill {
+    width: 100%;
+    height: var(--tracker-progress);
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .step {
+    min-height: 13px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding-left: 17px;
+    font-size: 10px;
+    text-align: left;
+  }
+
+  .stepDot {
+    position: absolute;
+    left: 0;
+  }
+
+  .stepName {
+    max-width: none;
+  }
+}

@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum PricingType {
+  FREE
+  FREEMIUM
+  PAID
+}
+
+enum RequestStatus {
+  REQUESTED
+  UNDER_REVIEW
+  SCHEDULED
+  IN_DEVELOPMENT
+  AVAILABLE
+}
+
+model Category {
+  id          String        @id @default(cuid())
+  name        String
+  slug        String        @unique
+  description String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  tools       Tool[]
+  requests    ToolRequest[]
+}
+
+model Tool {
+  id          String      @id @default(cuid())
+  name        String
+  slug        String      @unique
+  description String
+  websiteUrl  String
+  logoUrl     String?
+  categoryId  String
+  pricingType PricingType
+  isActive    Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  category    Category    @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+
+  @@index([categoryId])
+}
+
+model ToolRequest {
+  id                String                @id @default(cuid())
+  title             String
+  description       String
+  useCase           String?
+  categoryId        String?
+  status            RequestStatus         @default(REQUESTED)
+  eta               DateTime?
+  createdAt         DateTime              @default(now())
+  updatedAt         DateTime              @updatedAt
+  category          Category?             @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  statusHistory     RequestStatusHistory[]
+  votes             RequestVote[]
+
+  @@index([categoryId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model RequestStatusHistory {
+  id             String        @id @default(cuid())
+  requestId      String
+  previousStatus RequestStatus?
+  newStatus      RequestStatus
+  note           String?
+  createdAt      DateTime      @default(now())
+  request        ToolRequest   @relation(fields: [requestId], references: [id], onDelete: Cascade)
+
+  @@index([requestId, createdAt])
+}
+
+model RequestVote {
+  id        String      @id @default(cuid())
+  requestId String
+  voterKey  String
+  createdAt DateTime    @default(now())
+  request   ToolRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+
+  @@unique([requestId, voterKey])
+  @@index([requestId])
+}

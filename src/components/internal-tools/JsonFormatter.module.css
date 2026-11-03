@@ -1,0 +1,151 @@
+.formatter {
+  padding-top: 24px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 13px;
+}
+
+.toolbar p {
+  margin: 0;
+  color: var(--color-secondary);
+  font-size: 12px;
+}
+
+.clearButton,
+.panelHeading button {
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-forest);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.editorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.editorPanel {
+  display: flex;
+  min-width: 0;
+  min-height: 380px;
+  flex-direction: column;
+  border: 1px solid rgb(23 23 19 / 13%);
+  background: #fffefa;
+}
+
+.panelHeading {
+  display: flex;
+  min-height: 43px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  border-bottom: 1px solid rgb(23 23 19 / 10%);
+  color: #514e46;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.panelHeading > span > span,
+.panelHeading > span:last-child {
+  color: #8b867a;
+  font-size: 9px;
+  font-weight: 450;
+}
+
+.panelHeading button:disabled {
+  color: #aaa59a;
+  cursor: not-allowed;
+}
+
+.editorPanel textarea {
+  width: 100%;
+  min-height: 335px;
+  flex: 1;
+  resize: vertical;
+  padding: 17px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.7;
+  tab-size: 2;
+}
+
+.editorPanel textarea::placeholder {
+  color: #aaa59a;
+}
+
+.actions {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 13px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid var(--color-forest);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.primaryButton {
+  background: var(--color-forest);
+  color: #fffdf8;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--color-forest);
+}
+
+.message {
+  margin-left: auto;
+  color: var(--color-forest);
+  font-size: 11px;
+}
+
+.error {
+  color: #9c352d;
+}
+
+.privacyNote {
+  margin: 8px 0 0;
+  color: #807b70;
+  font-size: 10px;
+}
+
+@media (max-width: 720px) {
+  .editorGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .editorPanel {
+    min-height: 280px;
+  }
+
+  .editorPanel textarea {
+    min-height: 230px;
+  }
+
+  .message {
+    width: 100%;
+    margin-left: 0;
+  }
+}

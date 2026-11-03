@@ -1,0 +1,375 @@
+.discovery {
+  padding: 0 0 86px;
+}
+
+.intro {
+  padding: 58px 0 39px;
+  border-bottom: 1px solid rgb(23 23 19 / 13%);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-forest);
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  margin: 13px 0 7px;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 1.05;
+}
+
+.intro h1 em {
+  color: var(--color-forest);
+  font-family: var(--font-accent);
+  font-size: 1.1em;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.intro > p:last-child {
+  margin: 10px 0 0;
+  color: var(--color-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.finder {
+  padding: 25px 0 28px;
+  border-bottom: 1px solid rgb(23 23 19 / 13%);
+}
+
+.searchBox {
+  display: flex;
+  width: min(100%, 720px);
+  min-height: 53px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 15px;
+  border: 1px solid rgb(23 23 19 / 17%);
+  background: #fffefa;
+  transition: border-color 160ms ease;
+}
+
+.searchBox:focus-within {
+  border-color: rgb(31 81 50 / 58%);
+}
+
+.searchIcon {
+  display: flex;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  color: #706c63;
+}
+
+.searchIcon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.6;
+}
+
+.searchBox input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font-size: 13px;
+}
+
+.searchBox input::placeholder {
+  color: #817d73;
+  opacity: 1;
+}
+
+.clearSearch {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: #6c685f;
+  cursor: pointer;
+  font-size: 21px;
+}
+
+.filterBlock {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  margin-top: 19px;
+}
+
+.filterLabel {
+  min-width: 52px;
+  padding-top: 7px;
+  color: #777267;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.categoryFilters,
+.priceFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.filterChip,
+.priceChip {
+  min-height: 30px;
+  padding: 0 11px;
+  border: 1px solid rgb(23 23 19 / 13%);
+  border-radius: 2px;
+  background: transparent;
+  color: #625e56;
+  cursor: pointer;
+  font-size: 10px;
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+
+.filterChip:hover,
+.priceChip:hover {
+  border-color: rgb(31 81 50 / 42%);
+  color: var(--color-forest);
+}
+
+.filterChipActive,
+.priceChipActive {
+  border-color: var(--color-forest);
+  background: var(--color-forest);
+  color: #fffdf8;
+}
+
+.filterChipActive:hover,
+.priceChipActive:hover {
+  border-color: var(--color-forest);
+  background: var(--color-forest);
+  color: #fffdf8;
+}
+
+.results {
+  padding: 35px 0 56px;
+}
+
+.resultsHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.resultsHeading h2,
+.alternativesHeading h2 {
+  margin: 8px 0 0;
+  font-size: 25px;
+  font-weight: 550;
+  letter-spacing: -0.045em;
+}
+
+.resultCount {
+  margin: 0 0 4px;
+  color: #777267;
+  font-size: 11px;
+}
+
+.toolGrid,
+.alternativeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.emptyState {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+  border: 1px dashed rgb(23 23 19 / 18%);
+  text-align: center;
+}
+
+.emptyMark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid rgb(31 81 50 / 22%);
+  border-radius: 50%;
+  color: var(--color-forest);
+  font-size: 14px;
+}
+
+.emptyState h3 {
+  margin: 16px 0 6px;
+  font-size: 18px;
+  font-weight: 550;
+  letter-spacing: -0.025em;
+}
+
+.emptyState > p {
+  max-width: 390px;
+  margin: 0;
+  color: var(--color-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.resetButton {
+  min-height: 38px;
+  margin-top: 18px;
+  padding: 0 13px;
+  border: 1px solid var(--color-forest);
+  background: var(--color-forest);
+  color: #fffdf8;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.requestLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-forest);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.emptyState .requestLink {
+  margin-top: 16px;
+}
+
+.alternatives {
+  padding-top: 34px;
+  border-top: 1px solid rgb(23 23 19 / 14%);
+}
+
+.alternativesHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.alternativesHeading > div > p:last-child {
+  margin: 8px 0 0;
+  color: var(--color-secondary);
+  font-size: 12px;
+}
+
+.apiMessage {
+  margin: 15px 0;
+  padding: 14px 16px;
+  border: 1px solid rgb(23 23 19 / 13%);
+  color: var(--color-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  color: var(--color-secondary);
+  font-size: 11px;
+}
+
+.pageButton {
+  min-height: 34px;
+  padding: 0 11px;
+  border: 1px solid rgb(23 23 19 / 16%);
+  background: transparent;
+  color: var(--color-forest);
+  cursor: pointer;
+  font: inherit;
+}
+
+.pageButton:disabled {
+  color: #999488;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .toolGrid,
+  .alternativeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .discovery {
+    padding-bottom: 58px;
+  }
+
+  .intro {
+    padding: 45px 0 30px;
+  }
+
+  .intro h1 {
+    font-size: clamp(38px, 10vw, 50px);
+  }
+
+  .filterBlock {
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 17px;
+  }
+
+  .filterLabel {
+    padding-top: 0;
+  }
+
+  .categoryFilters {
+    gap: 6px;
+  }
+
+  .filterChip {
+    min-height: 29px;
+    padding: 0 9px;
+    font-size: 9px;
+  }
+
+  .results {
+    padding: 30px 0 43px;
+  }
+
+  .toolGrid,
+  .alternativeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .resultsHeading h2,
+  .alternativesHeading h2 {
+    font-size: 22px;
+  }
+
+  .alternativesHeading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .searchBox,
+  .filterChip,
+  .priceChip {
+    transition: none;
+  }
+}

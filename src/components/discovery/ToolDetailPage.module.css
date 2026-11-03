@@ -1,0 +1,45 @@
+.detail {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 50px 0 86px;
+}
+
+.backLink,
+.detail a {
+  color: var(--color-forest);
+  font-size: 11px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-top: 32px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgb(23 23 19 / 13%);
+}
+
+.mark,
+.logo {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 10px;
+  background: #e9f0e8;
+  color: var(--color-forest);
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.logo { object-fit: contain; }
+.eyebrow { margin: 0; color: var(--color-forest); font-size: 10px; font-weight: 650; letter-spacing: .13em; text-transform: uppercase; }
+.header h1 { margin: 5px 0 0; font-size: clamp(32px, 5vw, 48px); font-weight: 550; letter-spacing: -.055em; }
+.description { margin: 24px 0 12px; color: var(--color-secondary); font-size: 14px; line-height: 1.7; }
+.pricing { color: var(--color-secondary); font-size: 11px; }
+.visitButton { display: inline-flex; min-height: 40px; align-items: center; gap: 9px; margin-top: 14px; padding: 0 14px; background: var(--color-forest); color: #fffdf8 !important; text-decoration: none; }
+.message,.notFound { padding: 60px 0; color: var(--color-secondary); font-size: 12px; }
+.notFound h1 { color: var(--color-ink); font-size: 30px; }
+
+@media (max-width: 640px) { .detail { padding-top: 38px; } }

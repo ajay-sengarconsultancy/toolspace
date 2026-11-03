@@ -1,0 +1,96 @@
+.card {
+  display: flex;
+  min-height: 242px;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid rgb(23 23 19 / 12%);
+  background: rgb(255 254 250 / 66%);
+  transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgb(31 81 50 / 36%);
+  background: #fffefa;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 11px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.pricing {
+  padding: 6px 8px;
+  border: 1px solid rgb(23 23 19 / 10%);
+  color: #68645b;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.category {
+  margin: 19px 0 0;
+  color: var(--color-forest);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.card h3 {
+  margin: 5px 0 6px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  margin: 0 0 18px;
+  color: var(--color-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px solid rgb(23 23 19 / 9%);
+}
+
+.tagList,
+.alternativeLabel {
+  overflow: hidden;
+  color: #777267;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.alternativeLabel {
+  color: var(--color-forest);
+}
+
+.arrow {
+  flex: 0 0 auto;
+  color: var(--color-forest);
+  font-size: 13px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}
